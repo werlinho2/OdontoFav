@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="src/styles/styles.css" />
+    <link rel="stylesheet" href="src/styles/header.css" />
+    <link rel="stylesheet" href="src/styles/home.css" />
+    <link rel="stylesheet" href="src/styles/servicos.css" />
+    <link rel="stylesheet" href="src/styles/unidades.css" />
+    <link rel="stylesheet" href="src/styles/clinica.css" />
+    <link rel="stylesheet" href="src/styles/footer.css" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>OdontoFav</title>
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <a href="index.html" class="logo-container">
+          <img
+            src="src/img/odontofav_logo.png"
+            alt="Logo FavOdonto"
+            class="logo-img"
+          />
+        </a>
+
+        <ul id="nav_list">
+          <li class="nav-item active"><a href="#home">Início</a></li>
+          <li class="nav-item"><a href="#servicos">Serviços</a></li>
+          <li class="nav-item"><a href="#sobre">Clínica</a></li>
+          <li class="nav-item"><a href="#unidades">Unidades</a></li>
+          <li class="nav-item"><a href="#testimonials">Avaliações</a></li>
+        </ul>
+
+        <div class="header-social">
+          <a href="https://wa.me/5527998654698" target="_blank"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></a>
+          <a href="https://www.instagram.com/favodonto/" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" target="_blank"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+        </div>
+
+        <button id="mobile_btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+
+      <div id="mobile_servicos">
+        <ul id="mobile_nav_list">
+          <li class="nav-item"><a href="#home">Início</a></li>
+          <li class="nav-item"><a href="#servicos">Serviços</a></li>
+          <li class="nav-item"><a href="#sobre">Clínica</a></li>
+          <li class="nav-item"><a href="#unidades">Unidades</a></li>
+          <li class="nav-item"><a href="#testimonials">Avaliações</a></li>
+        </ul>
+
+        <div class="header-social-mobile">
+          <a href="https://wa.me/5527998654698" target="_blank"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></a>
+          <a href="https://www.instagram.com/favodonto/" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" target="_blank"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+        </div>
+      </div>
+    </header>
+
+    <main id="content">
+      <section id="home">
+        <div id="cta">
+          <h1 class="title">
+            Seu sorriso merece o cuidado da <span>OdontoFav</span>
+          </h1>
+
+          <p class="description">
+            Especialistas em transformar vidas através da saúde bucal.
+            Atendimento humanizado e tecnologia de ponta no coração de Serra e
+            Vitória.
+          </p>
+
+          <div id="cta_buttons">
+            <a
+              href="https://api.whatsapp.com/send/?phone=5527998654698&text=Ol%C3%A1%2C+vim+pelo+site%2C+quero+agendar+uma+consulta%21&type=phone_number&app_absent=0"
+              class="btn-default"
+            >
+              <i class="fa-brands fa-whatsapp"></i> Agendar Avaliação
+            </a>
+          </div>
+        </div>
+        <div id="banner">
+          <img src="src/img/dentista.jpg" alt="Dentista FavOdonto" />
+        </div>
+      </section>
+
+      <section id="servicos">
+        <h2 class="section-title">Especialidades</h2>
+        <h3 class="section-subtitle">Nossas Áreas de Atuação</h3>
+
+        <div class="servicos-grid">
+          <div class="servico-card">
+            <i class="fa-solid fa-tooth"></i>
+            <h4>Clínico Geral</h4>
+            <p>
+              Prevenção e cuidados essenciais para manter a saúde do seu sorriso
+              em dia.
+            </p>
+          </div>
+
+          <div class="servico-card">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <h4>Clareamento</h4>
+            <p>Conquiste um sorriso mais branco e iluminado com segurança.</p>
+          </div>
+
+          <div class="servico-card">
+            <i class="fa-solid fa-teeth-open"></i>
+            <h4>Ortodontia (Aparelho)</h4>
+            <p>
+              Alinhamento perfeito para a estética e funcionalidade da sua
+              mordida.
+            </p>
+          </div>
+
+          <div class="servico-card">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <h4>Implante</h4>
+            <p>
+              Recupere a confiança para sorrir e mastigar com dentes fixos e
+              naturais.
+            </p>
+          </div>
+
+          <div class="servico-card">
+            <i class="fa-solid fa-teeth"></i>
+            <h4>Prótese Dentária</h4>
+            <p>
+              Reabilitação oral personalizada para devolver a harmonia do seu
+              rosto.
+            </p>
+          </div>
+
+          <div class="servico-card">
+            <i class="fa-solid fa-cubes"></i>
+            <h4>Prótese Sobre Implante</h4>
+            <p>Estabilidade máxima e conforto definitivo para o seu sorriso.</p>
+          </div>
+
+          <div class="servico-card">
+            <i class="fa-solid fa-spa"></i>
+            <h4>Harmonização Facial</h4>
+            <p>
+              Realce sua beleza natural com procedimentos estéticos modernos.
+            </p>
+          </div>
+
+          <div class="servico-card">
+            <i class="fa-solid fa-syringe"></i>
+            <h4>Cirurgia</h4>
+            <p>
+              Procedimentos cirúrgicos seguros e humanizados para o seu
+              bem-estar.
+            </p>
+          </div>
+
+          <div class="servico-card">
+            <i class="fa-solid fa-user-doctor"></i>
+            <h4>Endodontia (Canal)</h4>
+            <p>
+              Tratamento especializado para eliminar a dor e salvar o seu dente.
+            </p>
+          </div>
+
+          <div class="servico-card">
+            <i class="fa-solid fa-fill-drip"></i>
+            <h4>Dentística (Restauração)</h4>
+            <p>
+              Devolva a forma e a função dos dentes afetados por cáries ou
+              traumas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre" class="espaco-premium">
+        <div class="espaco-header">
+          <h2 class="premium-title">Conheça nossos espaços de atendimento</h2>
+          <p class="premium-description">
+            Disponibilizamos uma <strong>estrutura projetada</strong> para
+            oferecer acolhimento, atendimento personalizado e de excelência,
+            garantindo aos pacientes uma experiência mais
+            <strong>segura e confortável</strong> em nossas duas unidades.
+          </p>
+        </div>
+
+        <div class="unidade-galeria">
+          <h3 class="unidade-nome">Unidade Serra</h3>
+          <div class="mosaico-3">
+            <div class="carrossel-track">
+              <img src="src/img/serra_1.png" alt="Recepção Serra" />
+              <img src="src/img/serra_2.png" alt="Consultório Serra" />
+              <img src="src/img/serra_3.png" alt="Equipamentos Serra" />
+
+              <img src="src/img/serra_1.png" alt="Recepção Serra" />
+              <img src="src/img/serra_2.png" alt="Consultório Serra" />
+              <img src="src/img/serra_3.png" alt="Equipamentos Serra" />
+
+              <img src="src/img/serra_1.png" alt="Recepção Serra" />
+              <img src="src/img/serra_2.png" alt="Consultório Serra" />
+              <img src="src/img/serra_3.png" alt="Equipamentos Serra" />
+            </div>
+          </div>
+        </div>
+
+        <div class="unidade-galeria">
+          <h3 class="unidade-nome">Unidade Vitória</h3>
+          <div class="mosaico-3">
+            <div class="carrossel-track">
+              <img src="src/img/vitoria_1.png" alt="Recepção Vitória" />
+              <img src="src/img/vitoria_2.png" alt="Consultório Vitória" />
+              <img src="src/img/vitoria_3.png" alt="Equipamentos Vitória" />
+
+              <img src="src/img/vitoria_1.png" alt="Recepção Vitória" />
+              <img src="src/img/vitoria_2.png" alt="Consultório Vitória" />
+              <img src="src/img/vitoria_3.png" alt="Equipamentos Vitória" />
+
+              <img src="src/img/vitoria_1.png" alt="Recepção Vitória" />
+              <img src="src/img/vitoria_2.png" alt="Consultório Vitória" />
+              <img src="src/img/vitoria_3.png" alt="Equipamentos Vitória" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="unidades">
+        <h2 class="section-title">Onde Estamos</h2>
+        <h3 class="section-subtitle">Nossas Unidades</h3>
+
+        <div class="unidades-lista">
+          <div class="unidade-bloco">
+            <div class="unidade-info">
+              <h4><i class="fa-regular fa-building"></i> Unidade Serra</h4>
+              <p>
+                Av. Jones dos Santos Neves, 429 - Caçaroca (Próximo à UPA) |
+                CEP: 29176-437 - Serra/ES
+              </p>
+
+              <p class="horario-funcionamento">
+                <i class="fa-regular fa-clock"></i> Seg a Sex: 08h às 18h | Sáb:
+                08h às 12h
+              </p>
+
+              <a href="#" target="_blank" class="btn-rota">
+                <i class="fa-solid fa-map-location-dot"></i> Traçar Rota
+              </a>
+            </div>
+
+            <div class="mapa-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7492.3301105941055!2d-40.312131660330365!3d-20.127160499583514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb81f0030acd295%3A0x44c48624826978a7!2sOdonto%20Fav!5e0!3m2!1spt-BR!2sbr!4v1774023400814!5m2!1spt-BR!2sbr"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+          <hr class="divisor-unidades" />
+
+          <div class="unidade-bloco">
+            <div class="unidade-info">
+              <h4><i class="fa-regular fa-building"></i> Unidade Vitória</h4>
+              <p>
+                Rua Cândido Portinari, 27, 5º Andar / Sala 507 - Ed. River
+                Center | Santa Luíza, CEP: 29045-415 - Vitória/ES
+              </p>
+
+              <p class="horario-funcionamento">
+                <i class="fa-regular fa-clock"></i> Seg a Sex: 08h às 18h | Sáb:
+                08h às 12h
+              </p>
+
+              <a href="#" target="_blank" class="btn-rota">
+                <i class="fa-solid fa-map-location-dot"></i> Traçar Rota
+              </a>
+            </div>
+
+            <div class="mapa-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7484.423881185257!2d-40.3109273064209!3d-20.291492699999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb8170054fd579b%3A0x87837a66ea0af76c!2sOdonto%20Fav%20Vit%C3%B3ria!5e0!3m2!1spt-BR!2sbr!4v1774023475356!5m2!1spt-BR!2sbr"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <img
+            src="src/img/odontofav_logo_branco.png"
+            alt="Logo OdontoFav Branco"
+            class="logo-img-branco"
+          />
+          <p>
+            Especialistas em transformar vidas através da saúde bucal.
+            Atendimento humanizado e tecnologia de ponta.
+          </p>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Atendimento</h4>
+          <p><i class="fa-regular fa-clock"></i> Seg a Sex: 08:00 às 18:00</p>
+          <p>
+            <i class="fa-regular fa-calendar-check"></i> Sábado: 08:00 às 12:00
+          </p>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://wa.me/5527998654698" target="_blank"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></a>
+          <a href="https://www.instagram.com/favodonto/" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" target="_blank"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <p>
+          © 2026 OdontoFav. Todos os direitos reservados. | Responsável Técnico:
+          Dr(a). [Nome do Dentista] - CRO/ES [00000]
+        </p>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/5527998654698?text=Ol%C3%A1%2C+vim+pelo+site%2C+quero+agendar+uma+consulta%21"
+      class="whatsapp-flutuante"
+      target="_blank"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="src/javascript/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+/* --- src/styles/footer.css --- */
+
+/* --- FOOTER (RODAPÉ COM DEGRADÊ AZUL) --- */
+/* --- FOOTER (RODAPÉ COM IMAGEM E DEGRADÊ) --- */
+#footer {
+  /* 1ª Camada (Frente): Degradê Azul com Opacidade
+    O valor '0.9' significa 90% de cor e 10% transparente. 
+    Se quiser ver mais a imagem, diminua para 0.8 ou 0.7 
+  */
+  /* 2ª Camada (Fundo): A imagem
+    Lembre-se de colocar a sua imagem na pasta src/img/
+  */
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(0, 174, 255, 0.92) 0%,
+      rgba(51, 181, 229, 0.92) 100%
+    ),
+    url("../img/background.png");
+
+  /* Ajustes da imagem para ela encaixar perfeito */
+  background-size: cover; /* Faz a foto preencher todo o espaço sem distorcer */
+  background-position: center; /* Foca no meio da foto */
+  background-repeat: no-repeat; /* Evita que a foto fique se repetindo como azulejo */
+
+  padding: 20px 8% 20px 8%;
+  color: #ffffff;
+}
+
+.logo-img-branco {
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-container:hover .logo-img-branco {
+  transform: scale(1.1);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite quebrar linha no celular */
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.footer-brand {
+  max-width: 400px;
+}
+
+.footer-brand img {
+  width: 160px;
+  margin-bottom: 15px;
+  /* DICA: Se a sua logo sumir no fundo azul, apague os caracteres /* e da linha de baixo para o CSS pintá-la de branco: /* filter: brightness(0) invert(1); */
+}
+
+.footer-brand p {
+  color: #ffffff; /* Um branco levemente azulado para ficar mais suave na leitura */
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* --- ÍCONES SOCIAIS DO FOOTER --- */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Fundo da bolinha meio transparente */
+  color: #ffffff; /* Ícone branco */
+  border-radius: 50%;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Efeito Hover: Bolinha fica branca e o ícone fica azul */
+.footer-social a:hover {
+  background-color: #ffffff;
+  color: #0084ff;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- DIREITOS AUTORAIS --- */
+.footer-copyright {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Linha sutil separando os direitos */
+  color: #cce0ff;
+  font-size: 0.9rem;
+}
+
+/* --- INFORMAÇÕES DE CONTATO/HORÁRIO NO FOOTER --- */
+.footer-contact h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-contact p {
+  color: #e6f4ff;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-contact i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+/* --- RESPONSIVIDADE DO FOOTER (CELULAR) --- */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer-brand p {
+    margin: 0 auto;
+  }
+}

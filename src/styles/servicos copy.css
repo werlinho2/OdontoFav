@@ -1,0 +1,150 @@
+/* --- SEÇÃO DE SERVIÇOS --- */
+#servicos {
+  text-align: center;
+  padding-top: 80px; /* Dá um respiro entre a Home e os Serviços */
+}
+
+.section-title {
+  color: #0095ff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-subtitle {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+/* --- GRID DOS CARDS --- */
+.servicos-grid {
+  display: grid;
+  /* Cria colunas responsivas automaticamente. No mínimo 250px, no máximo 1 fração do espaço */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* --- ESTILO DO CARD --- */
+.servico-card {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Efeito de flutuação ao passar o mouse */
+.servico-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Ícone do Card */
+.servico-card i {
+  font-size: 2.5rem;
+  color: #0095ff;
+  background-color: #e6f4ff;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.servico-card:hover i {
+  background-color: #0095ff;
+  color: #ffffff;
+}
+
+.servico-card h4 {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.servico-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* --- RESPONSIVIDADE (Celular) --- */
+@media screen and (max-width: 768px) {
+  /* 1. Remove a "parede invisível" das laterais da seção */
+  #servicos {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* 2. Devolve a margem para os títulos, para eles não colarem na borda do celular */
+  .section-title,
+  .section-subtitle {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  .section-subtitle {
+    font-size: 2rem;
+  }
+
+  /* 3. A grade agora vai de ponta a ponta da tela livremente */
+  .servicos-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+
+    /* O SEGREDO ESTÁ AQUI: Adicionamos espaço em cima e embaixo para o card poder "pular" sem ser cortado */
+    padding-top: 15px;
+    padding-bottom: 30px;
+
+    padding-left: 8%;
+    padding-right: 8%;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .servicos-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* --- AJUSTE DOS CARDS MENORES --- */
+  .servico-card {
+    width: 170px;
+    min-width: 170px;
+    flex: 0 0 170px;
+    white-space: normal;
+
+    scroll-snap-align: center;
+    padding: 20px 10px;
+    gap: 10px;
+    border-radius: 15px;
+  }
+
+  .servico-card i {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .servico-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .servico-card p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+}

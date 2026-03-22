@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f8f9;
+}
+
+section {
+  padding: 18px 8%;
+}
+
+.btn-default {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #386aff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  box-shadow: 0px 0px 10px 2px #0000002f;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-default:hover {
+  background-color: #5a83ff;
+}
+
+.social-media-buttons {
+  display: flex;
+  gap: 18px;
+}
+
+.social-media-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 40px;
+  background-color: #ffffff;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  box-shadow: 0x 0x 12px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.social-media-buttons a:hover {
+  box-shadow: 0x 0x 12px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- CONTROLE DE ROLAGEM DO MENU (SCROLL) --- */
+#home {
+  scroll-margin-top: 90px;
+}
+#servicos {
+  scroll-margin-top: 85px;
+}
+
+#unidades {
+  scroll-margin-top: 85px;
+}
+
+#clinica {
+  scroll-margin-top: 10px;
+}
+
+#sobre,
+#testimonials {
+  scroll-margin-top: 80px;
+}
+
+/* --- BOTÃO WHATSAPP FLUTUANTE --- */
+.whatsapp-flutuante {
+  position: fixed; /* Fixa o botão na tela */
+  bottom: 30px; /* Distância do fundo */
+  right: 30px; /* Distância da direita */
+  width: 60px;
+  height: 60px;
+  background-color: #25d366; /* Verde oficial do WhatsApp */
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 9999; /* Garante que fique por cima de QUALQUER coisa no site */
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+
+  /* Chama a animação de pulsação que vamos criar abaixo */
+  animation: pulsar-whatsapp 2s infinite;
+}
+
+/* Efeito ao passar o mouse */
+.whatsapp-flutuante:hover {
+  background-color: #128c7e; /* Verde um pouco mais escuro */
+  transform: scale(1.1); /* Dá uma leve aumentada */
+  color: #ffffff;
+}
+
+/* --- ANIMAÇÃO DE PULSAÇÃO (Efeito Premium) --- */
+@keyframes pulsar-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); /* Expande a sombra e fica transparente */
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* --- AJUSTES PARA CELULAR --- */
+@media screen and (max-width: 768px) {
+  .whatsapp-flutuante {
+    bottom: 20px; /* Fica um pouco mais perto da borda no celular */
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    font-size: 2rem;
+  }
+}

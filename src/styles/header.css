@@ -1,0 +1,163 @@
+header {
+  width: 100%;
+  padding: 10px 8%;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 3;
+}
+
+#navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-img {
+  height: 65px;
+  width: auto;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.logo-container:hover .logo-img {
+  transform: scale(1.1);
+}
+
+#nav_list {
+  display: flex;
+  list-style: none;
+  gap: 48px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.nav-item.active a {
+  color: black;
+  border-bottom: 3px solid #0095ff;
+}
+
+#mobile_btn {
+  display: none;
+}
+
+#mobile_servicos {
+  display: none;
+}
+
+/* --- ÍCONES SOCIAIS NO HEADER (PC) --- */
+.header-social {
+  display: flex;
+  gap: 12px; /* Reduzimos um pouco o espaço para caber as bolinhas */
+  align-items: center;
+}
+
+/* Criando o Fundo Circular Azul */
+.header-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;  /* Tamanho da bolinha no PC */
+  height: 40px;
+  background-color: #0084ff; /* Fundo azul da marca */
+  color: #ffffff; /* Ícone fica branco */
+  border-radius: 50%; /* Faz a bolinha perfeita */
+  font-size: 1.1rem; /* Tamanho do ícone ajustado para a bolinha */
+  text-decoration: none;
+  transition: all 0.3s ease; /* Animação suave para tudo */
+  box-shadow: 0 4px 10px rgba(0, 132, 255, 0.15); /* Sombra sutil para flutuar */
+}
+
+/* Efeito legal ao passar o mouse */
+.header-social a:hover {
+  background-color: #005bb5; /* Azul mais escuro ao passar o mouse */
+  transform: translateY(-3px); /* Pula sutilmente */
+  box-shadow: 0 6px 15px rgba(0, 132, 255, 0.3); /* Aumenta a sombra */
+}
+
+/* --- ÍCONES NO MENU DO CELULAR (HAMBÚRGUER ABERTO) --- */
+.header-social-mobile {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+}
+
+/* No celular, as bolinhas podem ser um pouco maiores para facilitar o clique */
+.header-social-mobile a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #0084ff;
+  color: #ffffff;
+  border-radius: 50%;
+  text-decoration: none !important; /* Arranca o sublinhado do texto */
+  border-bottom: none !important;   /* Arranca a linha de separação do menu */
+  box-shadow: none !important;      /* Previne sombras estranhas nativas do celular */
+  font-size: 1.4rem;
+  transition: background-color 0.3s ease;
+}
+
+.header-social-mobile a:hover {
+  background-color: #005bb5;
+}
+
+@media screen and (max-width: 1170px) {
+  .logo-img {
+    height: 40px;
+  }
+
+  .header-social {
+    display: none; 
+  }
+
+  #nav_list,
+  #navbar .btn-default {
+    display: none;
+  }
+  #mobile_btn {
+    display: block;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  #mobile_servicos.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px 0;
+    border-top: 1px solid #f0f0f0;
+
+    position: absolute;
+    left: 0;
+    top: 70px;
+    z-index: 99;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #mobile_nav_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+    list-style: none;
+  }
+
+  #mobile_nav_list .nav-item {
+    list-style: none;
+    text-align: center;
+  }
+}

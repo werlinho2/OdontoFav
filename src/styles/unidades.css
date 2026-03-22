@@ -1,0 +1,156 @@
+/* --- SEÇÃO DE UNIDADES --- */
+#unidades {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f4f9fa;
+  text-align: center; /* Mantém os títulos gerais centralizados */
+}
+
+/* --- LISTA DE UNIDADES (LADO A LADO EM GRID) --- */
+.unidades-lista {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* MANTENHA ISSO: É o segredo do alinhamento */
+  gap: 60px; /* Aumentei um pouco o espaço entre as colunas para respirar */
+
+  /* AUMENTE AQUI: Estava 1200px. Teste 1400px ou 1600px para ir mais para as bordas. */
+  max-width: 1600px;
+
+  margin: 50px auto 0 auto;
+  padding: 0 8%;
+}
+
+/* --- BLOCO DE CADA UNIDADE --- */
+.unidade-bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  height: 100%; /* NOVO: Força as duas colunas a terem a mesma altura total */
+}
+
+/* NOVO BLOCO: Adicione isso no seu unidades.css */
+.unidade-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* MÁGICA: Estica a caixa de texto para empurrar o mapa pro fundo */
+}
+
+/* Informações de Texto e Botão */
+.unidade-info h4 {
+  font-size: 1.5rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.unidade-info h4 i {
+  color: #0095ff;
+  font-size: 1.5rem;
+}
+
+.unidade-info p {
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Linha separadora (Escondemos no PC porque estão lado a lado) */
+.divisor-unidades {
+  display: none;
+}
+
+/* --- BOTÃO COMO CHEGAR --- */
+.btn-rota {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  background-color: #0095ff;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+  margin-top: auto; /* NOVO: Empurra o botão para colar no fundo da área de texto */
+}
+
+.btn-rota:hover {
+  background-color: #007acc;
+}
+
+.btn-rota i {
+  font-size: 1.2rem;
+}
+
+/* --- MAPAS INCORPORADOS --- */
+.mapa-container {
+  width: 100%;
+  height: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mapa-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --- HORÁRIO DE FUNCIONAMENTO NAS UNIDADES --- */
+.horario-funcionamento {
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: -5px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.horario-funcionamento i {
+  color: #0084ff;
+  margin-right: 5px;
+}
+
+/* --- RESPONSIVIDADE (Tablets e Celulares) --- */
+@media screen and (max-width: 992px) {
+  .unidades-lista {
+    grid-template-columns: 1fr; /* Volta a ficar uma embaixo da outra no celular */
+    gap: 40px; /* Espaço entre elas quando estão empilhadas */
+  }
+
+  /* No celular, a linha volta a aparecer para separar as unidades visualmente */
+  .divisor-unidades {
+    display: block;
+    border: none;
+    border-top: 2px dashed #d1e5eb;
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #unidades {
+    padding-top: 40px;
+  }
+
+  .unidade-info h4 {
+    font-size: 1.4rem;
+  }
+
+  .unidade-info p {
+    font-size: 0.95rem;
+  }
+
+  .mapa-container {
+    height: 250px;
+  }
+
+  .btn-rota {
+    width: 100%;
+  }
+}

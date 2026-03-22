@@ -1,0 +1,192 @@
+/* --- src/styles/clinica.css --- */
+
+/* --- CONFIGURAÇÃO GERAL DA SEÇÃO --- */
+#sobre {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  background-color: #f8f8ff; /* Fundo gelo/azulado */
+  text-align: center;
+}
+
+/* --- CABEÇALHO PREMIUM --- */
+.espaco-header {
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+  padding: 0 20px;
+}
+
+.premium-title {
+  font-size: 2.8rem;
+  color: #0084ff; /* Azul destaque */
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.premium-description {
+  font-size: 1.1rem;
+  color: #444444;
+  line-height: 1.6;
+}
+
+.premium-description strong {
+  color: #006eff;
+  font-weight: 700;
+}
+
+/* --- GALERIAS POR UNIDADE --- */
+.unidade-galeria {
+  margin-bottom: 40px;
+  /* Sem padding aqui para a esteira encostar nas laterais da tela */
+}
+
+.unidade-nome {
+  font-size: 1.2rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  text-align: left;
+  padding: 0 8%; /* Mantém o título alinhado com o texto de cima */
+}
+
+/* --- ESTEIRA ROLANTE E DEGRADÊS LATERAIS --- */
+.mosaico-3 {
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+/* Configuração base da "névoa" */
+.mosaico-3::before,
+.mosaico-3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 250px; /* Largura do fade no PC */
+  z-index: 1;
+  pointer-events: none; /* Deixa o mouse "atravessar" a névoa para pausar a foto */
+}
+
+/* Camada da Esquerda */
+.mosaico-3::before {
+  left: 0;
+  /* Degradê usando o RGB exato da cor #f8f8ff (248, 248, 255) */
+  background: linear-gradient(
+    to right,
+    rgba(248, 248, 255, 1) 0%,
+    rgba(248, 248, 255, 0.9) 20%,
+    rgba(248, 248, 255, 0.5) 60%,
+    rgba(248, 248, 255, 0) 100%
+  );
+}
+
+/* Camada da Direita */
+.mosaico-3::after {
+  right: 0;
+  /* Inverte o sentido do degradê para a direita */
+  background: linear-gradient(
+    to left,
+    rgba(248, 248, 255, 1) 0%,
+    rgba(248, 248, 255, 0.9) 20%,
+    rgba(248, 248, 255, 0.5) 60%,
+    rgba(248, 248, 255, 0) 100%
+  );
+}
+
+/* --- A TRILHA E AS FOTOS --- */
+.carrossel-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: deslizar 20s linear infinite; /* 20 segundos para dar a volta */
+}
+
+/* Pausa ao passar o mouse */
+.carrossel-track:hover {
+  animation-play-state: paused;
+}
+
+.carrossel-track img {
+  flex: 0 0 300px; /* Largura da foto (formato paisagem) */
+  height: 310px; /* Altura da foto */
+  max-width: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse na foto */
+.carrossel-track img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* --- A MÁGICA DA ANIMAÇÃO NO CSS --- */
+@keyframes deslizar {
+  0% {
+    transform: translateX(0); /* Começa no eixo zero */
+  }
+  100% {
+    /* Desliza metade da trilha menos metade do gap para loop perfeito */
+    transform: translateX(calc(-50% - 10px));
+  }
+}
+
+/* --- RODAPÉ DA SEÇÃO --- */
+.espaco-footer {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid #eaeaea;
+  font-size: 1.05rem;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.espaco-footer strong {
+  color: #0084ff; /* Azul nos nomes das unidades */
+}
+
+/* --- RESPONSIVIDADE (CELULAR E TABLET) --- */
+@media screen and (max-width: 992px) {
+  #sobre {
+    padding-bottom: 5px;
+    padding-top: 40px;
+  }
+
+  .premium-title {
+    font-size: 2rem; /* Título menor no celular */
+  }
+
+  .unidade-nome {
+    text-align: center;
+    padding: 0; /* Tira o padding para centralizar perfeitamente no mobile */
+  }
+
+  .carrossel-track img {
+    flex: 0 0 240px; /* Fotos menores no celular */
+    height: 220px;
+  }
+
+  .mosaico-3 {
+    width: 100vw; /* Força a ter exatamente 100% da largura do visor do celular */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-bottom: 10px;
+  }
+
+  .mosaico-3::before,
+  .mosaico-3::after {
+    width: 30px; /* Degradê menor para não apagar a foto toda no celular */
+  }
+}

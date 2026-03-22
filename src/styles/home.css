@@ -1,0 +1,141 @@
+#home {
+  display: flex;
+  align-items: center; /* Centraliza verticalmente o texto e a imagem */
+  justify-content: space-between;
+  min-height: calc(100vh - 85px);
+  padding: 0 8%; /* Mantém o alinhamento com a navbar */
+  background-image: url("../img/background.png"); /* O caminho partindo da pasta styles */
+  background-size: cover; /* Faz a imagem cobrir toda a seção sem sobrar espaço */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Impede que a imagem fique se repetindo */
+  background-attachment: fixed; /* Opcional: Efeito Parallax (a imagem fica parada ao rolar) */
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+    url("../img/background.png");
+  background-size: cover;
+}
+
+#cta {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  /* margin-top: 5%;  Removi para o align-items:center do pai fazer o trabalho */
+}
+
+#cta .title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+#cta .title span {
+  color: #0095ff;
+}
+
+#cta .description {
+  font-size: 1.2rem;
+}
+
+#cta_buttons {
+  display: flex;
+  gap: 24px;
+}
+
+#cta_buttons a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* --- AJUSTE DO BANNER --- */
+#banner {
+  width: 60%; /* Ocupa o restante do espaço */
+  display: flex;
+  justify-content: flex-end;
+}
+
+#banner img {
+  width: 100%; /* Faz a imagem ocupar 100% da div #banner */
+  max-width: 600px; /* Limite máximo para não estourar em telas grandes */
+  height: auto; /* Mantém a proporção */
+  border-radius: 30px; /* Estética arredondada */
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+  transition: all 0.4s ease-in-out;
+}
+
+#banner:hover img {
+  transform: rotate(1deg) scale(1.05);
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* --- BOTÕES DE REDES SOCIAIS --- */
+.social-media-buttons {
+  display: flex;
+  gap: 18px;
+  margin-top: 25px; /* Dá um espaço entre o botão de agendar e os ícones */
+}
+
+.social-media-buttons i {
+  font-size: 24px;
+  color: #333; /* Ou a cor que você preferir */
+  transition: all 0.3s ease;
+}
+
+.social-media-buttons i:hover {
+  color: #0095ff;
+  transform: scale(1.2);
+}
+
+/* --- RESPONSIVIDADE (Celular) --- */
+@media screen and (max-width: 1170px) {
+  #home {
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    text-align: center;
+    height: auto;
+    gap: 10px;
+
+    /* REFORÇO DO BACKGROUND PRO CELULAR: */
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)),
+      url("../img/background.png") !important;
+    background-size: cover !important;
+    background-position: center bottom !important;
+    background-repeat: no-repeat !important;
+  }
+
+  /* MÁGICA 2: Remove qualquer margem invisível que esteja empurrando a imagem para baixo */
+  #cta {
+    width: 95%;
+    margin-bottom: 0;
+  }
+
+  #cta .title {
+    font-size: 1.4rem;
+  }
+
+  #cta .description {
+    font-size: 0.9rem;
+  }
+
+  #cta_buttons,
+  .social-media-buttons {
+    justify-content: center;
+  }
+
+  #banner {
+    width: 95%;
+    justify-content: center;
+    /* MÁGICA 3: Zera a margem do topo. Se quiser a foto ainda mais pra cima, pode usar valor negativo, ex: margin-top: -20px; */
+    margin-top: 0;
+    padding: 0 10px 30px 10px;
+  }
+
+  #banner img {
+    max-width: 100%;
+    margin-top: 15px;
+  }
+  #home {
+    min-height: calc(10vh - 85px);
+  }
+}
