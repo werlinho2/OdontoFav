@@ -127,6 +127,11 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* --- CONTROLE DE PAUSA DO JAVASCRIPT --- */
+.carrossel-track.pausado {
+  animation-play-state: paused !important;
+}
+
 /* --- A MÁGICA DA ANIMAÇÃO NO CSS --- */
 @keyframes deslizar {
   0% {
@@ -175,6 +180,11 @@
     height: 220px;
   }
 
+  /* Garante que o CSS respeite quando o JS colocar a classe .pausado */
+  .carrossel-track.pausado {
+    animation-play-state: paused !important;
+  }
+
   .mosaico-3 {
     width: 100vw; /* Força a ter exatamente 100% da largura do visor do celular */
     position: relative;
@@ -188,5 +198,11 @@
   .mosaico-3::before,
   .mosaico-3::after {
     width: 30px; /* Degradê menor para não apagar a foto toda no celular */
+  }
+
+  /* Impede que o toque na tela trave a animação para sempre por causa do hover */
+  .mosaico-3:hover .carrossel-track,
+  .carrossel-track:hover {
+    animation-play-state: running;
   }
 }

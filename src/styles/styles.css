@@ -62,7 +62,7 @@ section {
   scroll-margin-top: 90px;
 }
 #servicos {
-  scroll-margin-top: 85px;
+  scroll-margin-top: 45px;
 }
 
 #unidades {
@@ -121,13 +121,36 @@ section {
   }
 }
 
-/* --- AJUSTES PARA CELULAR --- */
+/* --- AJUSTES PARA CELULAR (WHATSAPP) --- */
 @media screen and (max-width: 768px) {
   .whatsapp-flutuante {
-    bottom: 20px; /* Fica um pouco mais perto da borda no celular */
+    position: fixed !important; /* Trava o botão no "vidro" da tela do celular */
+    bottom: 20px;
     right: 20px;
     width: 55px;
     height: 55px;
     font-size: 2rem;
+    z-index: 9999 !important; /* Garante que fique por cima de absolutamente tudo */
+  }
+  /* --- TRAVA CONTRA ROLAGEM HORIZONTAL (SEM BUGAR O HEADER) --- */
+  #content {
+    overflow-x: hidden; /* Corta vazamentos apenas dentro do meio do site */
+    width: 100%;
+  }
+  /* --- REGRA DE OURO (Garante que os espaços não quebrem a tela) --- */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box !important;
+  }
+  /* --- CORTA VAZAMENTOS LATERAIS SEM BUGAR O HEADER FIXO --- */
+  #home,
+  #servicos,
+  #sobre,
+  #unidades,
+  #testimonials,
+  #footer {
+    overflow-x: hidden;
+    max-width: 100%;
   }
 }
