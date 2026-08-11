@@ -55,6 +55,7 @@ export default function Home() {
   const [isWhatsappModalOpen, setIsWhatsappModalOpen] = useState(false);
   const [activeFaqIndex, setActiveFaqIndex] = useState<number | null>(null);
   const [activeCaseIndex, setActiveCaseIndex] = useState<number | null>(null);
+  const [flippedCardIndex, setFlippedCardIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
@@ -68,6 +69,40 @@ export default function Home() {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleScrollFlippedCards = () => {
+      if (window.innerWidth >= 640) {
+        setFlippedCardIndex(null);
+        return;
+      }
+
+      const cards = document.querySelectorAll('.flip-card');
+      const viewportCenter = window.innerHeight / 2;
+
+      let closestIndex: number | null = null;
+      let minDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(cardCenter - viewportCenter);
+
+        if (distance < rect.height / 2 + 50) {
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestIndex = index;
+          }
+        }
+      });
+
+      setFlippedCardIndex(closestIndex);
+    };
+
+    window.addEventListener("scroll", handleScrollFlippedCards);
+    handleScrollFlippedCards();
+    return () => window.removeEventListener("scroll", handleScrollFlippedCards);
   }, []);
 
   const WHATSAPP_NUMBER = "5527998654698";
@@ -373,7 +408,7 @@ export default function Home() {
             ].map((treatment, idx) => (
               <motion.div 
                 key={idx} 
-                className="flip-card cursor-default"
+                className={`flip-card cursor-default ${flippedCardIndex === idx ? 'flipped' : ''}`}
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
                 <div className="flip-card-inner">
