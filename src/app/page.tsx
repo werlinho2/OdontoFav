@@ -835,7 +835,7 @@ export default function Home() {
               return (
                 <motion.div 
                   key={idx}
-                  className="border border-gray-100 rounded-2xl overflow-hidden bg-brand-light/30 transition-all duration-300"
+                  className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'bg-white shadow-md border-brand-blue-marine/20' : 'bg-white/70 border-gray-200/50 hover:bg-white/90 hover:border-gray-200'}`}
                   initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: idx * 0.05 }}
                 >
                   <button
