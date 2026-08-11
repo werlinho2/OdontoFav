@@ -118,7 +118,12 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(35, 66, 110, 0.04);
   background-color: #ffffff;
 }
-.flip-card:hover .flip-card-inner,
+@media (hover: hover) {
+  .flip-card:hover .flip-card-inner {
+    transform: translateY(-5px) rotateY(180deg);
+    box-shadow: 0 20px 40px rgba(35, 66, 110, 0.12);
+  }
+}
 .flip-card.flipped .flip-card-inner {
   transform: translateY(-5px) rotateY(180deg);
   box-shadow: 0 20px 40px rgba(35, 66, 110, 0.12);

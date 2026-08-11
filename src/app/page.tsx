@@ -408,6 +408,11 @@ export default function Home() {
             ].map((treatment, idx) => (
               <motion.div 
                 key={idx} 
+                onClick={() => {
+                  if (window.innerWidth < 640) {
+                    setFlippedCardIndex(flippedCardIndex === idx ? null : idx);
+                  }
+                }}
                 className={`flip-card cursor-default ${flippedCardIndex === idx ? 'flipped' : ''}`}
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
@@ -429,7 +434,10 @@ export default function Home() {
                       <h3 className="font-bold text-white text-xl mb-3">{treatment.title}</h3>
                       <p className="text-white/90 text-sm leading-relaxed mb-6">Conheça nossos diferenciais em {treatment.title.toLowerCase()}.</p>
                       <button
-                        onClick={() => setIsWhatsappModalOpen(true)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setIsWhatsappModalOpen(true);
+                        }}
                         className="inline-flex items-center gap-2 bg-white text-brand-blue-marine px-4 py-2 rounded-full text-xs font-semibold hover:scale-105 transition-transform cursor-pointer"
                       >
                         <MessageCircle className="w-3.5 h-3.5" />
